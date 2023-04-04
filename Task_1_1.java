@@ -1,7 +1,7 @@
 // Task_1.1. Алгоритм сортировки слиянием
 
 public class Task_1_1 {
-    public static void mergeSort(int[] arr, int length) {
+    public static void merge1(int[] arr, int length) {
         if (length < 2) {
             return;
         }
@@ -15,8 +15,8 @@ public class Task_1_1 {
         for (int i = middle; i < length; i++) {
             RightArr[i - middle] = arr[i];
         }
-        mergeSort(LeftArr, middle);
-        mergeSort(RightArr, length - middle);
+        merge1(LeftArr, middle);
+        merge1(RightArr, length - middle);
 
         merge(arr, LeftArr, RightArr, middle, length - middle);
     }
@@ -40,7 +40,7 @@ public class Task_1_1 {
     }
         public static void main (String[] args) {
             int[] array = { 50, 11, 2, 8, 354, 1 };
-            mergeSort(array, array.length);
+            merge1(array, array.length);
             for (int item : array){
                 System.out.print(item + ", ");
             }
